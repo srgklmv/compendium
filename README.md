@@ -1,13 +1,13 @@
 # compendium
 
-Plan
+TODO:
 - [ ] Computer science essentials
   - [ ] Network protocols
-- [ ] Algorithms and data structures - base level
 - [ ] Algorithms and data structures - base level
 - [ ] Architecture patterns
 - [ ] Golang
   - [x] Go Tour 
+  - [ ] Channels
 - [ ] Git
 - [ ] Databases
   - [ ] Relational
