@@ -1,6 +1,21 @@
 # Array
 
-Array is just a type, that represents a sequence of elements of the same type.
-It has fixed size.
+**Array** - это массив объектов одного типа с фиксированной длинной. Соответственно,
+имеет две характеристики - длину и тип данных.
 
-It includes type and size.
+```go
+type Array struct {
+    len  int64
+    elem Type
+}
+```
+
+Представляет собой **непрерывную область памяти**.
+
+### Декларирование
+
+```go
+var a [5]int
+a := [5]int{1, 2, 3, 4, 5}
+a := [...]int{1, 2, 3, 4, 5}
+```
