@@ -19,6 +19,9 @@ type slice struct {
 
 ### Comparison
 
+Слайсы нельзя сравнивать друг с другом с помощью операторов сравнения.
+Можно сравнивать через `reflect.DeepEqual()` или `slices.Compare()`.
+Второй сравнивает значения длины, вместимости и указатель на первый элемент.
 
 ### Increasing underlying array
 
@@ -80,7 +83,34 @@ func nextslicecap(newLen, oldCap int) int {
 > мы можем получить пустой слайс.
 
 > Вопрос: Что будет, если передать нулевой cap в make?\
-> Ответ: 
+> Ответ: В созданном слайсе в ссылке будет находиться нулевой указатель (0x0), 
+> который ни к чему не ведёт. Поэтому, такой слайс не будет равен nil.
+> Примеры:
+> 
+> ```go
+>    package main
+>    
+>    import (
+>    "fmt"
+>    )
+>    
+>    func main() {
+>    a := make([]int, 0)
+>    fmt.Print("\n REMOVE ME! ", "a == nil: ", a == nil, "\n")
+>    
+>        b := make([]int, 0, 0)
+>        fmt.Print("\n REMOVE ME! ", "b == nil: ", b == nil, "\n")
+>    
+>        c := make([]int, 1)
+>        fmt.Print("\n REMOVE ME! ", "c == nil: ", c == nil, "\n")
+>    
+>        d := []int{}
+>        fmt.Print("\n REMOVE ME! ", "d == nil: ", d == nil, "\n")
+>    
+>        var e []int
+>        fmt.Print("\n REMOVE ME! ", "e == nil: ", e == nil, "\n")
+>    }
+> ```
 
 ### Links
 
