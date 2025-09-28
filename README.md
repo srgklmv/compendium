@@ -15,6 +15,7 @@ TODO:
   - [ ] Colon
 - [ ] Frameworks
 - [ ] Other technologies
+- [ ] How memory pointers works?
 
 ## Термины
 
